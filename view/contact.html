@@ -1,0 +1,211 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DepthDecor</title>
+	<link rel="stylesheet" type="text/css" href="../css/slide.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script type="text/javascript">
+	var mainApp = angular.module("mainApp", ['ngRoute']);
+	mainApp.config(function($routeProvider) {
+	$routeProvider
+		.when('/aboutus', {
+			templateUrl: './../view/about.html',
+		})
+		.when('/viewStudents', {
+			templateUrl: 'viewStudents.html',
+			controller: 'StudentController'
+		})
+		.otherwise({
+			redirectTo: '/home'
+		});
+});
+
+</script>
+<script>
+   angular.module('inputExample', [])
+     .controller('ExampleController', ['$scope', function($scope) {
+       $scope.user = {name: 'guest'};
+     }]);
+</script>
+
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+	font-family:arial, sans-serif;
+}
+.navbar-default .navbar-nav li a{
+  color: orange;
+} 
+.navbar-default .navbar-nav .active a:hover{
+  color: orange; 
+}
+.navbar-default .navbar-nav .active a:focus{
+  color:white;
+  background-color: black;
+ }
+ .navbar-default .navbar-nav li a:hover{
+  color:white;
+ } 
+.bg{
+  background:url("../image/contact2.jpeg")no-repeat center center;;
+  background-size: cover;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+}
+.navbar-inverse .navbar-nav li a{
+  color: orange;
+} 
+.navbar-inverse .navbar-nav .active a:hover{
+  color: black; 
+  background-color: orange;
+}
+.navbar-inverse .navbar-nav .active a:focus{
+  color:black;
+  background-color: orange;
+ }
+ .navbar-inverse .navbar-nav li a:hover{
+  color:black;
+  background-color: orange;
+ } 
+ .navbar-inverse .navbar-nav li .active{
+  color:black;
+  background-color: orange;
+ }
+ .navbar-inverse .navbar-nav .active a{
+ color:black;
+  background-color: orange; 
+ }
+
+</style>
+</head>
+<body np-app="mainApp" class="bg">
+<div ng-view>
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:none;background:none;border:none;">
+  <div class="container-fluid">
+     <div class="pull-left"><img src="../image/depthdecor2.jpg"></div>
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../slide.html">Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">About</a></li>
+        <li style="color:black;"><a href="#">Gallary</a></li>
+       <li><a href="./ourteam.html">Our Team</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
+            </ul>       
+          <li>
+         <li class="active"><a href="#">Contact Us</a></li>
+      </ul>       
+    </div><!-- /.navbar-collapse -->   
+    </div><!-- /.container-fluid
+--> </nav> 
+<div class="container">   
+  <div class="row"style="margin-top:200px;">  
+    <div class="form-group col-lg-8 col-lg-offset-2" ng-controller="ExampleController">
+    <form ng-app="myApp" name="myForm" novalidate>
+      <div class="messages"></div>
+        <div class="controls">
+          <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="form_name">Firstname *</label>
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                    <span style="border-color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid"><br>
+                    <span ng-show="myForm.user.$error.required">Username is required.</span>
+                  <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="form_lastname">Lastname *</label>
+                    <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                    <span style="border-color:red" ng-show="myForm.user.$dirty && myForm.user.$invalid"><br>
+                    <span ng-show="myForm.user.$error.required">Username is required.</span>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="form_email">Email *</label>
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                    <span style="border-color:red" ng-show="myForm.email.$dirty && myForm.email.$invalid"><br>
+                    <span ng-show="myForm.email.$error.required">Email is required.</span>
+                    <span ng-show="myForm.email.$error.email">Invalid email address.</span>
+                    </span>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="form_phone">Phone</label>
+                    <input id="form_phone" type="tel" name="phone" class="form-control" placeholder="Please enter your phone">
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="form_message">Message *</label>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <input type="submit" class="btn btn-success btn-send" value="Send message"ng-disabled="myForm.user.$dirty && myForm.user.$invalid ||  
+                myForm.email.$dirty && myForm.email.$invalid || myForm.address.$dirty && myForm.address.$invalid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('ExampleController', function($scope) {
+   
+});
+</script>
+
+</div>   
+
+  
+</div>
+
+</div>	
+</body>
+
+</html>
