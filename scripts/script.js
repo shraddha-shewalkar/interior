@@ -8,8 +8,11 @@
 	    .when('/about', {
 	      templateUrl: '/view/about.html',
 	    })
-	    .when('/gallary ', {
+	    .when('/gallary', {
 	      templateUrl: '/view/gallary.html',
+	    })
+	    .when('/contact', {
+	      templateUrl: '/view/contact.html',
 	    })
 	    .otherwise({
 	      redirectTo: '/'
