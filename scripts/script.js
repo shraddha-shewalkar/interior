@@ -14,6 +14,9 @@
 	    .when('/contact', {
 	      templateUrl: '/view/contact.html',
 	    })
+	    .when('/ourteam', {
+	      templateUrl: '/view/ourteam.html',
+	    })
 	    .otherwise({
 	      redirectTo: '/'
     });
